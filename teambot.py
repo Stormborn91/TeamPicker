@@ -2,6 +2,22 @@ import discord
 from discord.ext import commands
 import random
 import os
+from flask import Flask
+from threading import Thread
+
+# Web server to bind to port 8080 for Render
+app = Flask('')
+
+@app.route('/')
+def home():
+    return "I'm alive!"
+
+def run():
+    app.run(host='0.0.0.0', port=8080)
+
+def keep_alive():
+    t = Thread(target=run)
+    t.start()
 
 intents = discord.Intents.all()
 intents.members = True  # Required for role assignment
@@ -35,5 +51,6 @@ async def team(ctx):
         await ctx.send(f"Role '{role_name}' not found. Please make sure it exists on the server.")
 
 if __name__ == "__main__":
+    keep_alive()
     TOKEN = os.getenv("BOT_TOKEN")
     bot.run(TOKEN)
