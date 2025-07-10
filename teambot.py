@@ -53,4 +53,9 @@ async def team(ctx):
 if __name__ == "__main__":
     keep_alive()
     TOKEN = os.getenv("BOT_TOKEN")
-    bot.run(TOKEN)
+
+    while True:
+	try:
+    	    bot.run(TOKEN)
+	except Exception as e:
+	    print(f"Bot crashed with error: {e}. Restarting...")
