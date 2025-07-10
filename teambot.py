@@ -34,5 +34,5 @@ async def team(ctx):
         await ctx.send(f"Role '{role_name}' not found. Please make sure it exists on the server.")
 
 if __name__ == "__main__":
-TOKEN = os.getenv("BOT_TOKEN")
-bot.run(TOKEN)
+    TOKEN = os.getenv("BOT_TOKEN")
+    bot.run(TOKEN)
