@@ -1,6 +1,7 @@
 import discord
 from discord.ext import commands
 import random
+import os
 
 intents = discord.Intents.all()
 intents.members = True  # Required for role assignment
