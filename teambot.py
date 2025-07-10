@@ -55,7 +55,7 @@ if __name__ == "__main__":
     TOKEN = os.getenv("BOT_TOKEN")
 
     while True:
-	try:
-    	    bot.run(TOKEN)
-	except Exception as e:
-	    print(f"Bot crashed with error: {e}. Restarting...")
+        try:
+            bot.run(TOKEN)
+        except Exception as e:
+            print(f"Bot crashed with error: {e}. Restarting...")
